@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">2ResourcesAndButtons</string>
+    <string name="status_initial">Status: Initialized</string>
+    <string name="status_changed">Status: Modified</string>
+</resources>
