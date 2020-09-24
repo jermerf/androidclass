@@ -51,7 +51,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="phone"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:lines="4" />
 
         <EditText
             android:id="@+id/editTextTextMultiLine"

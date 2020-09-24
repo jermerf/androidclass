@@ -29,7 +29,7 @@ public class MyCustomAdapter extends ArrayAdapter<CatPost> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_custom, parent, false);
         }
         ImageView icon = convertView.findViewById(R.id.imgIcon);
-        TextView title = convertView.findViewById(R.id.lblItemTitle);
+        TextView title = convertView.findViewById(R.id.lblIcon);
         TextView content = convertView.findViewById(R.id.lblItemContent);
         icon.setImageResource(getItem(position).getIconResource());
         title.setText(getItem(position).getTitle());

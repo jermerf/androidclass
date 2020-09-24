@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         txtItem = findViewById(R.id.txtItemTitle);
         listItems = findViewById(R.id.listItems);
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 
         listItems.setAdapter(adapter);
     }
