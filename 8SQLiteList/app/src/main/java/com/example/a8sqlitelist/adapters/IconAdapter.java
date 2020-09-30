@@ -17,10 +17,10 @@ import com.example.a8sqlitelist.model.IconResource;
 import java.util.Arrays;
 import java.util.List;
 
-public class IconAdapter extends ArrayAdapter<String> {
+public class IconAdapter extends ArrayAdapter<IconResource> {
 
     public IconAdapter(Context ctx){
-        super(ctx, android.R.layout.simple_list_item_1, IconResource.getIconTitles());
+        super(ctx, android.R.layout.simple_list_item_1, IconResource.values());
     }
 
     @NonNull
@@ -29,12 +29,12 @@ public class IconAdapter extends ArrayAdapter<String> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_icon, parent, false);
         }
-        String name = getItem(position);
+        IconResource icon = getItem(position);
         ImageView imgIcon = convertView.findViewById(R.id.imgIcon);
         TextView lblIcon = convertView.findViewById(R.id.lblIcon);
 
-        imgIcon.setImageResource(IconResource.getResourceFromTitle(name));
-        lblIcon.setText(name);
+        imgIcon.setImageResource(icon.getResource());
+        lblIcon.setText(icon.toString());
         return convertView;
     }
 

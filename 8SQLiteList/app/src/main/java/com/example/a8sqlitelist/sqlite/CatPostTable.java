@@ -28,7 +28,7 @@ public class CatPostTable {
         ContentValues values = new ContentValues();
         values.put(COL_title, post.getTitle());
         values.put(COL_content, post.getContent());
-        values.put(COL_icon, post.getIcon().toString());
+        values.put(COL_icon, post.getIcon().name());
         db.insert(TABLE_NAME, null, values);
     }
 

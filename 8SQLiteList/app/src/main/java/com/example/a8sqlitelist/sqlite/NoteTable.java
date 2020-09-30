@@ -14,7 +14,7 @@ public class NoteTable {
 
     public static final String TABLE_CREATE_QUERY =
             "CREATE TABLE " + TABLE_NAME + "(" +
-                    COL_id + " NUMBER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                    COL_id + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                     COL_content + " TEXT NOT NULL);";
 
     public static void insert(SQLiteDatabase db, String note){

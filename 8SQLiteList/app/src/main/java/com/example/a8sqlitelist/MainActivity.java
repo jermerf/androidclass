@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        spinIcon = findViewById(R.id.spinIcon);
         txtTitle = findViewById(R.id.txtItemTitle);
         txtContent = findViewById(R.id.txtItemContent);
-        spinIcon = findViewById(R.id.spinIcon);
         listItems = findViewById(R.id.listItems);
 
         spinIcon.setAdapter(new IconAdapter(this));
@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateList(){
-        List<CatPost> catPosts =  CatPostTable.getCatPosts(sqLiteManager.getReadableDatabase());
+        List<CatPost> catPosts = CatPostTable.getCatPosts(sqLiteManager.getReadableDatabase());
         listItems.setAdapter(new CatPostAdapter(this, catPosts));
     }
 
     public void addClicked(View v){
-        IconResource icon = IconResource.iconFromPosition(spinIcon.getSelectedItemPosition());
+        IconResource icon = IconResource.values()[spinIcon.getSelectedItemPosition()];
         CatPost post = new CatPost(txtTitle.getText(), txtContent.getText(), icon.toString());
         CatPostTable.insert(sqLiteManager.getWritableDatabase(), post);
 

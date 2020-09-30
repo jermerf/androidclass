@@ -43,5 +43,10 @@ public class MainActivity extends AppCompatActivity {
         Intent goToSecondActivity = new Intent(this, SecondActivity.class);
         startActivity(goToSecondActivity);
     }
-
+    public void implicitIntentClicked(View v) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, txtToast.getText().toString());
+        startActivity(Intent.createChooser(shareIntent, "Edison, take the wheel"));
+    }
 }

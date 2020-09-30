@@ -17,19 +17,6 @@ public enum IconResource {
         }
     }
 
-    public static IconResource iconFromPosition(int p) {
-        switch (p){
-            case 0: return IconResource.CAMERA;
-            case 1: return IconResource.PHONE;
-            case 2: return IconResource.WRENCH;
-            case 3: return IconResource.GALLERY;
-        }
-        return IconResource.CAMERA;
-    }
-    public static List<String> getIconTitles() {
-        return Arrays.asList("Camera", "Phone", "Wrench", "Gallery");
-    }
-
     public int getResource() {
         switch(this){
             case CAMERA: return android.R.drawable.ic_menu_camera;
@@ -40,13 +27,15 @@ public enum IconResource {
         }
     }
 
-    public static int getResourceFromTitle(String title) {
-        switch (title) {
-            case "Camera": return IconResource.CAMERA.getResource();
-            case "Phone": return IconResource.PHONE.getResource();
-            case "Wrench": return IconResource.WRENCH.getResource();
-            case "Gallery": return IconResource.GALLERY.getResource();
-            default: return android.R.drawable.ic_menu_close_clear_cancel;
+    @Override
+    public String toString() {
+        switch (this) {
+            case PHONE: return "Phone";
+            case WRENCH: return "Wrench";
+            case GALLERY: return  "Gallery";
+            case CAMERA:
+            default:
+                return "Camera";
         }
     }
 }
