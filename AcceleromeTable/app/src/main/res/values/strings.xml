@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AcceleromeTable</string>
+    <string name="highscore_prefix">High Score: </string>
+</resources>

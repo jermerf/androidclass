@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         t.start();
         Animation bounce = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         v.startAnimation(bounce);
+        v.start
     }
 
 
